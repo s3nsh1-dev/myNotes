@@ -1,0 +1,20 @@
+Console Ninja
+Tabnine AI Assitant
+Andromeda
+Auto Close Tag
+Auto Rename Tag
+Better Comments
+Code Runner
+CSS Peak
+Docx/ODT Viewer
+ES7 React/Redux Snippets
+ES7+ React/Redux/ React-Native snippets
+ESLint
+index-rainbow
+JsvsSctipt (ES6) code Snippets
+Live Server
+Live Share
+Material Icons Theme
+Prettier code formatter
+Rest Clint
+Trailing Spaces 
