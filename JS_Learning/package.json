@@ -1,11 +1,11 @@
 {
-  "name": "chai",
+  "name": "js_learning",
   "version": "1.0.0",
-  "description": "testing for written program",
+  "description": "Learning Code and Logic",
   "license": "ISC",
-  "author": "",
+  "author": "Shubham Pandey",
   "type": "commonjs",
-  "main": "1. check-isogram.js",
+  "main": "main.js",
   "scripts": {
     "test": "mocha"
   },

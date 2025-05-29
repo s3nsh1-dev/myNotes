@@ -1,5 +1,9 @@
+/**
+ * @param {string} str
+ * @returns {boolean}
+ */
 function isIsogram(str) {
-  str = str.toLowerCase();
-  return new Set(str).size === str.length;
+  const lowerCaseStr = str.toLowerCase();
+  return new Set(lowerCaseStr).size === str.length;
 }
 module.exports = isIsogram;
