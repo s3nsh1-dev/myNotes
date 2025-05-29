@@ -15,7 +15,7 @@ Hint: Don't forget to check for bad values like null/undefined
  */
 
 const { assert } = require("chai");
-const { countSheeps } = require("../src/2_counting-sheep");
+const countSheeps = require("../src/2_counting-sheep");
 
 describe("Sample Tests", function () {
   const tests = [
