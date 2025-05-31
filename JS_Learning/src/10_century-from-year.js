@@ -5,11 +5,6 @@
  */
 
 function century(year) {
-  // Finish this :)
-  console.log();
-  return;
+  return Math.ceil(year / 100);
 }
 module.exports = century;
-century(1705);
-century(1900);
-century(1601);
