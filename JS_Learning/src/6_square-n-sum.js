@@ -10,5 +10,4 @@ function squareSum(numbers) {
   }
   return numbers.map((item) => item * item).reduce((a, b) => a + b);
 }
-console.log(squareSum([1, 2, 2]));
 module.exports = squareSum;
