@@ -6,16 +6,11 @@
  */
 
 function digPow(n, p) {
-  const gg = String(n).split("");
-  let powSumed = 0;
-  for (let i = 0; i < gg.length; i++) {
-    let temp = Math.pow(+gg[i], p++);
-    powSumed += temp;
-  }
-  const result = powSumed / n;
-  const foo = Math.floor(result) < result ? -1 : result;
-  return foo;
-  // ...
+  const digits = String(n).split("").map(Number);
+  const sum = digits.reduce(
+    (acc, digit, idx) => acc + Math.pow(digit, p + idx),
+    0
+  );
+  return sum % n === 0 ? sum / n : -1;
 }
-digPow(46288, 3);
 module.exports = digPow;
