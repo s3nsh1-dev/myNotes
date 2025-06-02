@@ -3,31 +3,13 @@
  * @param {number} nFloors
  * @returns {[]}
  */
-
 function towerBuilder(nFloors) {
-  // build here
-  const temp = "*";
-  for (let i = 0; i < nFloors; i++) {
-    console.log(temp);
+  const tower = [];
+  for (let i = 1; i <= nFloors; i++) {
+    const stars = "*".repeat(i * 2 - 1);
+    const spaces = " ".repeat(nFloors - i);
+    tower.push(spaces + stars + spaces);
   }
-  findTotalNumber(nFloors);
+  return tower;
 }
-const findTotalNumber = (floor) => {
-  let odd = 0;
-  for (let i = 0; i <= floor; i++) {
-    if (i % 2 !== 0) {
-      odd = i;
-    }
-  }
-  console.log("odd", odd);
-};
-function fillIn(num, size) {
-  let final = new Array(size);
-  if (num == size) {
-    return "*".repeat(num);
-  }
-  for (let i = 0; i < num; i++) {}
-}
-towerBuilder(10);
-fillIn(5, 5);
 module.exports = towerBuilder;
