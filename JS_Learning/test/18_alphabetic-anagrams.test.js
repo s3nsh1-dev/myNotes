@@ -22,6 +22,7 @@ BOOKKEEPER = 10743
 */
 
 const { expect } = require("chai");
+const listPosition = require("../src/18_alphabetic-anagrams");
 
 describe("Anagram", function () {
   const testValues = {
@@ -113,4 +114,33 @@ console.log("AAAB =", listPosition("AAAB")); // Expected: 1
 console.log("BAAA =", listPosition("BAAA")); // Expected: 4
 console.log("QUESTION =", listPosition("QUESTION")); // Expected: 24572
 console.log("BOOKKEEPER =", listPosition("BOOKKEEPER")); // Expected: 10743
+
+
+The algorithm works as follows:
+
+Count letter frequencies: Track how many times each letter appears in the word.
+For each position:
+
+Look at all letters that come alphabetically before the current letter
+For each such letter, calculate how many permutations would start with that letter
+This uses the multinomial coefficient: (remaining positions)! / (count1! × count2! × ...)
+
+
+Multinomial coefficient: When we have repeated letters, we use n! / (n1! × n2! × ... × nk!) where n is total positions and ni is the count of each distinct letter.
+Accumulate rank: Sum up all permutations that would come before our word lexicographically.
+Return 1-indexed result: Add 1 since we want 1-based ranking.
+
+Example walkthrough for "ABAB":
+
+Position 0: 'A' - no letters come before 'A', so 0 arrangements
+Position 1: 'B' - 'A' comes before 'B', and we have 1 'A' left. Remaining positions: 2, with letters A,B. Arrangements: 2!/1! = 2. But wait, we need to be more careful...
+
+Let me trace through "ABAB" more carefully:
+
+Letters: A(2), B(2)
+All permutations in order: AABB, ABAB, ABBA, BAAB, BABA, BBAA
+"ABAB" is the 2nd one, so rank = 2 ✓
+
+The algorithm correctly handles duplicate letters by using multinomial coefficients instead of simple factorials.RetryClaude can make mistakes. Please double-check responses.
+
 */
